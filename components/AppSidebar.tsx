@@ -8,10 +8,6 @@ import {
 import { FaReact } from "react-icons/fa";
 import { RiNextjsFill } from "react-icons/ri";
 
-// import { NavMain } from "@/components/nav-main"
-// import { NavProjects } from "@/components/nav-projects"
-// import { NavSecondary } from "@/components/nav-secondary"
-// import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
@@ -22,10 +18,11 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { NavCategories } from "./NavCategories"
+import { NavUser } from "@/components/NavUser";
 
 const data = {
   user: {
-    name: "shadcn",
+    name: "User Name",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
@@ -67,7 +64,7 @@ export default function AppSidebar() {
         <NavCategories categories={data.categories} />
       </SidebarContent>
       <SidebarFooter>
-        {/* <NavUser user={data.user} /> */}
+        <NavUser user={data.user} />
       </SidebarFooter>
     </Sidebar>
   )
