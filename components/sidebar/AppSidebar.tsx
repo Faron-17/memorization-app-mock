@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import {
   Command,
@@ -17,8 +15,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { NavCategories } from "./NavCategories"
-import { NavUser } from "@/components/NavUser";
+import { NavCategories } from "@/components/sidebar/NavCategories"
+import { NavUser } from "@/components/sidebar/NavUser";
 
 const data = {
   user: {
@@ -29,12 +27,12 @@ const data = {
   categories: [
     {
       name: "React.js",
-      url: "#",
+      url: "/react",
       icon: FaReact,
     },
     {
       name: "Next.js",
-      url: "#",
+      url: "/next",
       icon: RiNextjsFill,
     },
   ],
@@ -47,7 +45,7 @@ export default function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <a href="./">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>

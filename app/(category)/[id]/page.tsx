@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { Suspense } from 'react'
+
+import Header from "@/components/Header";
+import MainView from '@/components/contents/MainView';
 
 function page() {
+  // fetch
   return (
-    <div>page</div>
+    <>
+      <Header />
+      <Suspense>
+        <MainView />
+      </Suspense>
+    </>
   )
 }
 
