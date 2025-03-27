@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sidebar"
 import { NavCategories } from "@/components/sidebar/NavCategories"
 import { NavUser } from "@/components/sidebar/NavUser";
+import Link from "next/link";
 
 const data = {
   user: {
@@ -29,11 +30,13 @@ const data = {
       name: "React.js",
       url: "/react",
       icon: FaReact,
+      count: 1,
     },
     {
       name: "Next.js",
       url: "/next",
       icon: RiNextjsFill,
+      count: 2,
     },
   ],
 }
@@ -45,7 +48,7 @@ export default function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="./">
+              <Link href="/">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
@@ -53,7 +56,7 @@ export default function AppSidebar() {
                   <span className="truncate font-semibold">Memorization App</span>
                   <span className="truncate text-xs">Enterprise</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

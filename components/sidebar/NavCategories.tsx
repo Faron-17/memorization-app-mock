@@ -14,6 +14,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import { Badge } from "@/components/ui/badge"
 
 export function NavCategories({
   categories,
@@ -21,7 +22,8 @@ export function NavCategories({
   categories: {
     name: string
     url: string
-    icon: IconType
+    icon: IconType,
+    count: number,
   }[]
 }) {
   return (
@@ -31,9 +33,12 @@ export function NavCategories({
         {categories.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <Link href={item.url}>
-                <item.icon />
-                <span>{item.name}</span>
+              <Link href={item.url} className="flex justify-between">
+                <span className="flex items-center">
+                  <item.icon />
+                  <span className="ml-2">{item.name}</span>
+                </span>
+                <Badge>{item.count}</Badge>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>

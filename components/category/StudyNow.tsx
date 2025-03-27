@@ -17,11 +17,11 @@ const StudyNow = () => {
   const [isHidden, setIsHidden] = useState(true)
   const [isHiddenAnswer, setIsHiddenAnswer] = useState(true)
   return (
-    <>
+    <div className='pt-10 flex justify-center items-center h-full'>
       <Button onClick={() => setIsHidden(false)} className={cn(isHidden ? 'block' : 'hidden')}>
         Start
       </Button>
-      <div className={cn(isHidden ? 'hidden' : 'flex flex-col', 'justify-between h-full')}>
+      <div className={cn(isHidden ? 'hidden' : 'flex flex-col', 'justify-between h-full w-full')}>
         <Card className="w-full h-full">
           <CardHeader>
             <CardTitle className='flex'>
@@ -45,7 +45,7 @@ const StudyNow = () => {
           </Button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
