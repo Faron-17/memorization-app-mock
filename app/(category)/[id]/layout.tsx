@@ -20,8 +20,10 @@ export default async function Layout({ children, params }: { children: React.Rea
   return (
     <>
       <Header />
-      <MainView id={param}/>
-      {children}
+      <main className="py-6 px-6 flex flex-col h-full">
+        <MainView id={param}/>
+        {children}
+      </main>
     </>
   );
 }

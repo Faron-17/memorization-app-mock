@@ -1,6 +1,7 @@
 import * as React from "react"
 import {
   Command,
+  Plus
 } from "lucide-react"
 
 import { FaReact } from "react-icons/fa";
@@ -63,6 +64,10 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <NavCategories categories={data.categories} />
+        <Link href={`/create-category`} className="cursor-pointer flex items-center justify-center hover:bg-slate-200 px-5 py-2.5 rounded-lg">
+          <Plus width={16} height={16}/>
+          <span className="ml-2 text-sm font-medium">Create Category</span>
+        </Link>
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

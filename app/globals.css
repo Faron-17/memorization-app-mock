@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -119,4 +121,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* .card-content h1 {
+    @apply text-2xl font-bold text-gray-800;
+  }
+
+  .card-content h2 {
+    @apply text-xl font-bold text-gray-800;
+  }
+
+  .card-content h3 {
+    @apply text-lg font-bold text-gray-800;
+  } */
 }
