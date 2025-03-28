@@ -3,7 +3,7 @@ import MainView from "@/components/category/MainView";
 
 // export const experimental_ppr = true;
 
-export default async function Layout({ children, params }: { children: React.ReactNode,  params: { id: string } }) {
+export default async function Layout({ children, params }: { children: React.ReactNode,  params: Promise<{ id: string }> }) {
   const param = (await params).id;
 
   return (

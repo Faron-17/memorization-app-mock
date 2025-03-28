@@ -17,7 +17,7 @@ import { Book, Edit3, Hourglass, Trash2 } from 'lucide-react'
 import { AlertDialog, AlertDialogTrigger } from '@/components/ui/alert-dialog'
 import AlertPopup from '@/components/AlertPopup'
 
-export default async function page({ params }: { params: { id: string } }) {
+export default async function page({ params }: { params: Promise<{ id: string }> }) {
   const param = (await params).id;
   return (
     <div className='h-full flex flex-col justify-between mt-3'>
