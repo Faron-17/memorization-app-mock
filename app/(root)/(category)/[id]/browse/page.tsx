@@ -13,7 +13,9 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs"
 import Link from 'next/link'
-import { Book, Edit3, Hourglass } from 'lucide-react'
+import { Book, Edit3, Hourglass, Trash2 } from 'lucide-react'
+import { AlertDialog, AlertDialogTrigger } from '@/components/ui/alert-dialog'
+import AlertPopup from '@/components/AlertPopup'
 
 export default async function page({ params }: { params: { id: string } }) {
   const param = (await params).id;
@@ -46,10 +48,19 @@ export default async function page({ params }: { params: { id: string } }) {
           </TabsContent>
         ))}
       </Tabs>
-      <Link href={`/${param}/edit`} className='cursor-pointer flex items-center justify-center hover:bg-slate-100 px-5 py-2.5 rounded-lg w-3xs self-end mt-3'>
-        <Edit3 />
-        <span className='pl-3'>Edit</span>
-      </Link>
+      <div className='flex w-full items-end justify-end'>
+        <AlertDialog>
+          <AlertDialogTrigger className='cursor-pointer flex items-center justify-center hover:bg-slate-100 px-5 py-2.5 rounded-lg w-3xs self-end mt-3'>
+            <Trash2 />
+            <span className='pl-3'>Delete</span>
+          </AlertDialogTrigger>
+          <AlertPopup type='DELETE' href={`/${param}/browse`} />
+        </AlertDialog>
+        <Link href={`/${param}/edit`} className='cursor-pointer flex items-center justify-center hover:bg-slate-100 px-5 py-2.5 rounded-lg w-3xs self-end mt-3'>
+          <Edit3 />
+          <span className='pl-3'>Edit</span>
+        </Link>
+      </div>
     </div>
   )
 }
