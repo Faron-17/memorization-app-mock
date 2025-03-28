@@ -19,11 +19,11 @@ export default async function page({ params }: { params: { id: string } }) {
   const param = (await params).id;
   return (
     <div className='h-full flex flex-col justify-between mt-3'>
-      <ul className='flex space-x-3 ml-4'>
-        <li className='flex justify-center items-center cursor-pointer bg-black text-white text-sm py-1 px-2 rounded-sm'><Hourglass width={14}/> sort by time</li>
-        <li className='flex justify-center items-center cursor-pointer bg-black text-white text-sm py-1 px-2 rounded-sm'><Book width={14} /> sort by studied</li>
+      <ul className='flex space-x-3'>
+        <li className='flex justify-center items-center cursor-pointer bg-black text-white text-sm py-1 px-2 rounded-sm font-medium'><Hourglass width={14} height={14} className='mr-2' />sort by time</li>
+        <li className='flex justify-center items-center cursor-pointer bg-black text-white text-sm py-1 px-2 rounded-sm font-medium'><Book width={14} height={14} className='mr-2' />sort by studied</li>
       </ul>
-      <Tabs defaultValue={anki[0].title} className="grid grid-cols-3 h-full">
+      <Tabs defaultValue={anki[0].title} className="grid grid-cols-3 h-full mt-3">
         <TabsList className="grid w-full grid-cols-1 col-span-1">
           {anki.map((item, index: number) => (
             <TabsTrigger key={index} value={item.title} className='justify-start pr-5 cursor-pointer'>

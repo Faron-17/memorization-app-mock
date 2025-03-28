@@ -1,8 +1,4 @@
 import {
-  MoreHorizontal,
-} from "lucide-react"
-
-import {
   type IconType,
 } from "react-icons"
 
@@ -43,12 +39,6 @@ export function NavCategories({
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}
-        <SidebarMenuItem>
-          <SidebarMenuButton>
-            <MoreHorizontal />
-            <span>More</span>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
       </SidebarMenu>
     </SidebarGroup>
   )
